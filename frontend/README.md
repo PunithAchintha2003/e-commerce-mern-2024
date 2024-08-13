@@ -72,3 +72,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Error 1 : 
 Cannot find module 'ajv/dist/compile/codegen'
 Answer : npm install ajv@latest
+
+### Error 2 :
+VM91:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<! DOCTYPE "... is not valid JSON
+Answer : res.status(400).json({
+    message: err.message || err, 
+    error: true,
+    success: false,
+});
+
+### Error 3 :
+Uncaught (in promise) SyntaxError: Unexpected token '<', "<! DOCTYPE "... is not valid JSONUnderstand this error
+:8080/api/signup:1 
+
+Failed to load resource: the server responded with a status of 413 (Payload Too Large)
+
+Answer : // Increase the limit for JSON and URL-encoded payloads
+app.use(express.json({ limit: '50mb' })) // Adjust the limit as needed
+app.use(express.urlencoded({ limit: '50mb', extended: true })) // Adjust the limit as needed

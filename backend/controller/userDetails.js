@@ -18,7 +18,7 @@ async function userDetailsController(req,res) {
         res.status(400).json({
             message : err.message || err, 
             error : true,
-            success : false,
+            success : false
         })
     }
 }

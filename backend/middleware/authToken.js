@@ -30,7 +30,7 @@ async function authToken(req,res,next){
             message : err.message || err,
             data : [],
             error : true,
-            success : false,
+            success : false
         })
     }
 }

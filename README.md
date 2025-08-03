@@ -12,7 +12,6 @@ An advanced, full-stack e-commerce application built with the MERN stack (MongoD
 - [Folder Structure](#folder-structure)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ---
@@ -137,11 +136,6 @@ e-commerce-mern-2024/
 
 ## Contributing
 Contributions are welcome! Please open issues and submit pull requests for improvements or bug fixes.
-
----
-
-## License
-This project is licensed under the MIT License.
 
 ---
 

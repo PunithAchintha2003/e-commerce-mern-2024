@@ -27,6 +27,7 @@ A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Exp
 ## ✨ Features
 
 ### User Features
+
 - 🔐 **User Authentication** - Secure sign up, login, and logout with JWT tokens
 - 👤 **User Profile Management** - Update profile information
 - 🛍️ **Product Browsing** - Browse products by category with search and filtering
@@ -35,12 +36,14 @@ A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Exp
 - 📦 **Order Management** - View order history and track orders
 
 ### Admin Features
+
 - 👥 **User Management** - View and manage all users
 - 📦 **Product Management** - Create, update, and manage products
 - 📊 **Order Management** - View and manage all orders
 - 🔑 **Role-Based Access Control** - Admin and general user roles
 
 ### Technical Features
+
 - 🎨 **Responsive Design** - Mobile-first design with Tailwind CSS
 - 🔒 **Secure Authentication** - JWT-based authentication with bcrypt password hashing
 - 🚀 **RESTful API** - Well-structured REST API endpoints
@@ -51,6 +54,7 @@ A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Exp
 ## 🛠 Tech Stack
 
 ### Frontend
+
 - **React** 18.3.1 - UI library
 - **Redux Toolkit** 2.2.7 - State management
 - **React Router** 6.26.0 - Client-side routing
@@ -60,6 +64,7 @@ A modern, full-stack e-commerce platform built with the MERN stack (MongoDB, Exp
 - **Stripe.js** 4.5.0 - Payment processing
 
 ### Backend
+
 - **Node.js** 18+ - Runtime environment
 - **Express.js** 4.19.2 - Web framework
 - **MongoDB** - NoSQL database
@@ -84,24 +89,24 @@ Before you begin, ensure you have the following installed:
 
 ### 1. Clone the Repository
 
-   ```bash
-   git clone https://github.com/PunithAchintha2003/e-commerce-mern-2024.git
-   cd e-commerce-mern-2024
-   ```
+```bash
+git clone https://github.com/PunithAchintha2003/e-commerce-mern-2024.git
+cd e-commerce-mern-2024
+```
 
 ### 2. Install Backend Dependencies
 
-   ```bash
-   cd backend
-   npm install
-   ```
+```bash
+cd backend
+npm install
+```
 
 ### 3. Install Frontend Dependencies
 
-   ```bash
-   cd ../frontend
-   npm install
-   ```
+```bash
+cd ../frontend
+npm install
+```
 
 ## ⚙️ Configuration
 
@@ -132,15 +137,15 @@ NODE_ENV=development
 
 ### Environment Variables Explained
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `MONGODB_URI` | MongoDB connection string | ✅ Yes |
-| `JWT_SECRET` | Secret key for JWT token signing | ✅ Yes |
-| `STRIPE_SECRET_KEY` | Stripe API secret key | ⚠️ Optional |
-| `STRIPE_ENDPOINT_WEBHOOK_SECRET_KEY` | Stripe webhook endpoint secret | ⚠️ Optional |
-| `FRONTEND_URL` | Frontend application URL | ✅ Yes |
-| `PORT` | Backend server port | ❌ No (default: 8080) |
-| `NODE_ENV` | Environment mode (development/production) | ❌ No |
+| Variable                             | Description                               | Required              |
+| ------------------------------------ | ----------------------------------------- | --------------------- |
+| `MONGODB_URI`                        | MongoDB connection string                 | ✅ Yes                |
+| `JWT_SECRET`                         | Secret key for JWT token signing          | ✅ Yes                |
+| `STRIPE_SECRET_KEY`                  | Stripe API secret key                     | ⚠️ Optional           |
+| `STRIPE_ENDPOINT_WEBHOOK_SECRET_KEY` | Stripe webhook endpoint secret            | ⚠️ Optional           |
+| `FRONTEND_URL`                       | Frontend application URL                  | ✅ Yes                |
+| `PORT`                               | Backend server port                       | ❌ No (default: 8080) |
+| `NODE_ENV`                           | Environment mode (development/production) | ❌ No                 |
 
 ## 🏃 Running the Project
 
@@ -253,60 +258,62 @@ e-commerce-mern-2024/
 ## 📚 API Documentation
 
 ### Base URL
+
 ```
 http://localhost:8080/api
 ```
 
 ### Authentication Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/signup` | Register a new user | ❌ No |
-| POST | `/signin` | User login | ❌ No |
-| GET | `/userLogout` | User logout | ❌ No |
-| GET | `/user-details` | Get current user details | ✅ Yes |
+| Method | Endpoint        | Description              | Auth Required |
+| ------ | --------------- | ------------------------ | ------------- |
+| POST   | `/signup`       | Register a new user      | ❌ No         |
+| POST   | `/signin`       | User login               | ❌ No         |
+| GET    | `/userLogout`   | User logout              | ❌ No         |
+| GET    | `/user-details` | Get current user details | ✅ Yes        |
 
 ### User Management Endpoints
 
-| Method | Endpoint | Description | Auth Required | Admin Only |
-|--------|----------|-------------|---------------|------------|
-| GET | `/all-user` | Get all users | ✅ Yes | ✅ Yes |
-| POST | `/update-user` | Update user information | ✅ Yes | ✅ Yes |
+| Method | Endpoint       | Description             | Auth Required | Admin Only |
+| ------ | -------------- | ----------------------- | ------------- | ---------- |
+| GET    | `/all-user`    | Get all users           | ✅ Yes        | ✅ Yes     |
+| POST   | `/update-user` | Update user information | ✅ Yes        | ✅ Yes     |
 
 ### Product Endpoints
 
-| Method | Endpoint | Description | Auth Required | Admin Only |
-|--------|----------|-------------|---------------|------------|
-| GET | `/get-product` | Get all products | ❌ No | ❌ No |
-| POST | `/product-details` | Get product details | ❌ No | ❌ No |
-| POST | `/upload-product` | Create new product | ✅ Yes | ✅ Yes |
-| POST | `/update-product` | Update product | ✅ Yes | ✅ Yes |
-| GET | `/get-categoryProduct` | Get products by category | ❌ No | ❌ No |
-| POST | `/category-product` | Get category-wise products | ❌ No | ❌ No |
-| GET | `/search` | Search products | ❌ No | ❌ No |
-| POST | `/filter-product` | Filter products | ❌ No | ❌ No |
+| Method | Endpoint               | Description                | Auth Required | Admin Only |
+| ------ | ---------------------- | -------------------------- | ------------- | ---------- |
+| GET    | `/get-product`         | Get all products           | ❌ No         | ❌ No      |
+| POST   | `/product-details`     | Get product details        | ❌ No         | ❌ No      |
+| POST   | `/upload-product`      | Create new product         | ✅ Yes        | ✅ Yes     |
+| POST   | `/update-product`      | Update product             | ✅ Yes        | ✅ Yes     |
+| GET    | `/get-categoryProduct` | Get products by category   | ❌ No         | ❌ No      |
+| POST   | `/category-product`    | Get category-wise products | ❌ No         | ❌ No      |
+| GET    | `/search`              | Search products            | ❌ No         | ❌ No      |
+| POST   | `/filter-product`      | Filter products            | ❌ No         | ❌ No      |
 
 ### Cart Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/addtocart` | Add product to cart | ✅ Yes |
-| GET | `/view-card-product` | Get cart items | ✅ Yes |
-| GET | `/countAddToCartProduct` | Get cart item count | ✅ Yes |
-| POST | `/update-cart-product` | Update cart item quantity | ✅ Yes |
-| POST | `/delete-cart-product` | Remove item from cart | ✅ Yes |
+| Method | Endpoint                 | Description               | Auth Required |
+| ------ | ------------------------ | ------------------------- | ------------- |
+| POST   | `/addtocart`             | Add product to cart       | ✅ Yes        |
+| GET    | `/view-card-product`     | Get cart items            | ✅ Yes        |
+| GET    | `/countAddToCartProduct` | Get cart item count       | ✅ Yes        |
+| POST   | `/update-cart-product`   | Update cart item quantity | ✅ Yes        |
+| POST   | `/delete-cart-product`   | Remove item from cart     | ✅ Yes        |
 
 ### Order & Payment Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/checkout` | Create Stripe checkout session | ✅ Yes |
-| POST | `/webhook` | Stripe webhook handler | ❌ No |
-| GET | `/order-list` | Get user orders | ✅ Yes |
+| Method | Endpoint      | Description                    | Auth Required |
+| ------ | ------------- | ------------------------------ | ------------- |
+| POST   | `/checkout`   | Create Stripe checkout session | ✅ Yes        |
+| POST   | `/webhook`    | Stripe webhook handler         | ❌ No         |
+| GET    | `/order-list` | Get user orders                | ✅ Yes        |
 
 ### Response Format
 
 #### Success Response
+
 ```json
 {
   "data": {},
@@ -317,6 +324,7 @@ http://localhost:8080/api
 ```
 
 #### Error Response
+
 ```json
 {
   "message": "Error message",
@@ -330,6 +338,7 @@ http://localhost:8080/api
 ### Available Scripts
 
 #### Backend Scripts
+
 ```bash
 npm run dev    # Start development server with nodemon
 npm start      # Start production server
@@ -337,6 +346,7 @@ npm test       # Run tests (not configured)
 ```
 
 #### Frontend Scripts
+
 ```bash
 npm start      # Start development server
 npm run build  # Build for production
@@ -356,59 +366,78 @@ npm run eject  # Eject from Create React App (irreversible)
 ### Common Issues
 
 #### 1. MongoDB Connection Error
+
 ```
 Error: Cannot connect to MongoDB
 ```
-**Solution:** 
+
+**Solution:**
+
 - Ensure MongoDB is running locally or check your MongoDB Atlas connection string
 - Verify `MONGODB_URI` in `.env` file
 
 #### 2. Port Already in Use
+
 ```
 Error: Port 8080 is already in use
 ```
+
 **Solution:**
+
 - Change `PORT` in `.env` file
 - Or kill the process using the port: `lsof -ti:8080 | xargs kill -9`
 
 #### 3. JWT Token Error
+
 ```
 Invalid or expired token
 ```
+
 **Solution:**
+
 - Clear browser cookies
 - Login again to get a new token
 - Check `JWT_SECRET` in `.env` file
 
 #### 4. CORS Error
+
 ```
 Access to fetch blocked by CORS policy
 ```
+
 **Solution:**
+
 - Verify `FRONTEND_URL` in backend `.env` matches your frontend URL
 - Ensure backend CORS configuration is correct
 
 #### 5. Module Not Found Error
+
 ```
 Cannot find module 'ajv/dist/compile/codegen'
 ```
+
 **Solution:**
+
 ```bash
 cd frontend
 npm install ajv@latest
 ```
 
 #### 6. Payload Too Large (413 Error)
+
 ```
 Failed to load resource: the server responded with a status of 413
 ```
+
 **Solution:**
+
 - The server already has a 50MB limit configured
 - For larger files, increase the limit in `backend/index.js`
 
 ### Getting Help
 
 If you encounter issues not listed here:
+
 1. Check the [Issues](https://github.com/PunithAchintha2003/e-commerce-mern-2024/issues) page
 2. Create a new issue with detailed error information
 3. Include error logs and steps to reproduce

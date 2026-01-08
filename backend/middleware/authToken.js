@@ -7,21 +7,29 @@ async function authToken(req,res,next){
         console.log("token",token)
 
         if(!token){
-            return res.status(200).json({
+            return res.status(401).json({
                 message : "Please Login...!",
                 error : true,
                 success : false,
             })
         }
 
-        jwt.verify(token, process.env.TOKEN_SECRET_KEY, function(err, decoded) {
-            console.log(err)
-            console.log("decoded",decoded)
-
+        jwt.verify(token, process.env.JWT_SECRET, function(err, decoded) {
             if(err){
-                console.log("error auth",err)
+                return res.status(401).json({
+                    message : "Invalid or expired token. Please login again.",
+                    error : true,
+                    success : false,
+                })
             }
-            req.userId = decoded?._id
+            if(!decoded || !decoded._id){
+                return res.status(401).json({
+                    message : "Invalid token format. Please login again.",
+                    error : true,
+                    success : false,
+                })
+            }
+            req.userId = decoded._id
             next()
         });
 

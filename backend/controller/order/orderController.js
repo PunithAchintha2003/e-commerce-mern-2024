@@ -6,7 +6,7 @@ const orderController = async(request,response) => {
 
         const orderList = await orderModel.find({ userId : currentUserId })
 
-        response.json({
+        response.status(200).json({
             data : orderList,
             message : "Order List", 
             error : false,

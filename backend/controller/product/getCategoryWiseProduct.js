@@ -5,7 +5,7 @@ const getCategoryWiseProduct = async(req,res)=>{
         const { category } = req?.body || req?.query
         const product = await productModule.find({ category })
 
-        res.json({
+        res.status(200).json({
             data : product,
             message : "Product",
             success : true,

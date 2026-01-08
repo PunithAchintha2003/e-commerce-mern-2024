@@ -2,7 +2,7 @@ async function userLogout(req,res) {
     try{
         res.clearCookie("token")
 
-        res.json({
+        res.status(200).json({
             message : "Logged out successfully", 
             error : false,
             success : true,
@@ -10,7 +10,7 @@ async function userLogout(req,res) {
         })
 
     }catch(err){
-        res.json({
+        res.status(400).json({
             message : err.message || err, 
             error : true,
             success : false,

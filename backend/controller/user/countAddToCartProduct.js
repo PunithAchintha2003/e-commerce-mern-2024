@@ -8,7 +8,7 @@ const countAddToCartProduct = async(req,res)=>{
             userId : userId
         })
 
-        res.json({
+        res.status(200).json({
             data : {
                 count : count
             },
@@ -18,9 +18,9 @@ const countAddToCartProduct = async(req,res)=>{
         })
 
     }catch(error){
-        res.json({
+        res.status(400).json({
             message : error.message || error, 
-            error : false,
+            error : true,
             success : false,
         })
     }

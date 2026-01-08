@@ -4,7 +4,7 @@ const getProductController = async(req,res)=>{
     try{
         const allProduct = await productModule.find().sort({ createdAt : -1 })
 
-        res.json({
+        res.status(200).json({
             message : "All Product",
             success : true,
             error : false,

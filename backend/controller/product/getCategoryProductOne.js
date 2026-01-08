@@ -18,7 +18,7 @@ const getCategoryProduct = async(req,res) => {
             }
         }
 
-        res.json({
+        res.status(200).json({
             message : "Category Product",
             data : productByCategory,
             success : true,

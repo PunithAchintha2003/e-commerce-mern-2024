@@ -30,17 +30,18 @@ const OrderPage = () => {
 
       <div>
         {
-          /*data.map((item,index)=>{
+          data.map((item,index)=>{
             return(
               <div key={item.userId+index}>
                 <p className='font-medium text-lg'>{moment(item.createdAt).format('LL')}</p>
                 <div>
                   {
-                    item?.productDetails.map((product,index)=>{
+                    item?.productDetails?.map((product,productIndex)=>{
                       return(
-                        <div>
+                        <div key={productIndex}>
                           <img 
-                             src={}
+                             src={product.image}
+                             alt={product.name}
                           />
                         </div>
                       )
@@ -50,7 +51,7 @@ const OrderPage = () => {
                 </div>
               </div>
             )
-          })*/
+          })
         }
       </div>
     </div>

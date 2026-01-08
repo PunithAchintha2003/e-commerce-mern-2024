@@ -10,7 +10,7 @@ const addToCartController = async(req,res)=>{
         console.log("isProductAvailable",isProductAvailable)
 
         if(isProductAvailable){
-            return res.json({
+            return res.status(400).json({
                 message : "Already exits in Add to cart",
                 success : false,
                 error : true,
@@ -26,7 +26,7 @@ const addToCartController = async(req,res)=>{
         const newAddToCart = new addToCartModel(payload)
         const saveProduct = await newAddToCart.save()
 
-        return res.json({
+        return res.status(201).json({
             data : saveProduct,
             message : "Product Added in Cart",
             success : true,
@@ -34,7 +34,7 @@ const addToCartController = async(req,res)=>{
         })
 
     }catch(err){
-        res.json({
+        res.status(400).json({
             message : err?.message || err, 
             error : true,
             success : false

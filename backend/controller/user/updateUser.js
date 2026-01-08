@@ -18,7 +18,7 @@ async function updateUser(req,res){
 
         const updateUser = await userModel.findByIdAndUpdate(userId,payload)
 
-        res.json({
+        res.status(200).json({
             data : updateUser,
             message : "User Updated",
             success : true,
